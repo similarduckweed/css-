@@ -1,0 +1,11 @@
+body{
+    padding: 0;
+    margin: 0;
+}
+/* 设置字体格式 */
+a{
+    font-size: 16px;
+    color: slateblue;
+    background-color: bisque;
+    border: 0px solid skyblue;
+}
