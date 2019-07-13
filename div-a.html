@@ -5,8 +5,47 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>div+a之下拉菜单</title>
+    <!-- 导入外部链接 -->
+    <link rel="stylesheet" type="text/css" href="../css-DropDownList/style.css">
 </head>
 <body>
-    
+    <!-- 实例解析：
+
+　　HTML 部分：
+
+　　　　可以使用任何 HTML 元素来打开下拉菜单，比如 <span>，或 <a>、<button> 等元素。
+
+　　　　然后，使用 <div> 元素来创建一个容器，用于包含下拉菜单的内容，并自定义他需要出现的位置。
+
+　　　　最后，再使用 <div> 元素来包裹这些元素，并使用 CSS 来设置下拉内容的样式。
+
+　　CSS 部分：
+
+　　　　.dropdown 类使用 position:relative，这将设置下拉菜单的内容放置在下拉按钮（使用 position:absolute）的右下角位置。
+
+　　　　.dropdown-content 类中是实际的下拉菜单。默认是隐藏的，在鼠标移入指定元素后显示。
+
+　　　　注意：在上面的例子中，下拉菜单容器的宽度设置为最小 200px，根据实际情况可以自行定义。
+
+　　　　如果希望下拉菜单与下拉按钮的宽度一致，可将宽度设置为 100%，overflow:auto 属性可以指定在小尺寸屏幕上滚动。
+
+　　　　:hover 选择器用于在用户将鼠标移动到下拉按钮上时显示下拉菜单，将下拉菜单容器设置为 display:block; -->
+
+    <div class="dropdown">
+        <button type="button" class="dropbtn">下拉菜单按钮1</button>
+        <div class="dropdown-content">
+            <a href="#">下拉菜单项 1</a>
+            <a href="#">下拉菜单项 2</a>
+            <a href="#">下拉菜单项 3</a>
+        </div>
+    </div>
+    <div class="dropdown">
+        <button type="button" class="dropbtn">下拉菜单按钮2</button>
+        <div class="dropdown-content">
+            <a href="#">下拉菜单项 1</a>
+            <a href="#">下拉菜单项 2</a>
+            <a href="#">下拉菜单项 3</a>
+        </div>
+    </div>
 </body>
 </html>

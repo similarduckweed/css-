@@ -1,11 +1,96 @@
-body{
+/* 先重置一下html，消除HTML标签默认的内外边距 */
+*{
     padding: 0;
     margin: 0;
 }
-/* 设置字体格式 */
-a{
+
+/* 对导航的内容设置一个主体为800px的宽并使其居中 */
+.wrap{width: 800px;margin: 0 auto;}
+
+/* 设置字体格式, */
+li>a,ul>a{
     font-size: 16px;
-    color: slateblue;
+    color: blue;
     background-color: bisque;
-    border: 0px solid skyblue;
+    border-radius: 5px; /*圆角*/
+    text-decoration: none; /* 去掉默认a标签的下划线 */
+    padding:1px 36px;
+}
+/*菜单栏横向排列:(要设置下拉菜单的显示位置)*/
+.btn{
+    float: left;
+    margin-left: 1px;
+}
+/* 将下拉部分隐藏起来 */
+.drop1{
+    display: none;
+}
+
+/* 对a标签(菜单按钮)用:hover选择器；实现功能:当鼠标划过a标签时，隐藏部分内容可见 */
+.btn:hover .drop1{
+    display: block;
+    clear: both; /*清除浮动*/
+}
+/* 下拉按钮样式 */
+.drop1 li{
+    transition: .4s;
+    cursor: pointer;
+    list-style: none; /* 去掉修饰符 */
+    background-color: bisque;
+}
+/* 鼠标移入后修改链接的背景色 */
+/* 鼠标滑过一级菜单后的显示二级菜单 （直接写在li标签里面，就不用>a）*/
+.drop1 li:hover>a{
+    background: pink;
+}
+/* 下拉菜单显示后修改下拉按钮的背景色 */
+.btn:hover .drop-a{
+    background-color:peru;
+}
+
+
+
+
+
+
+/*------------div格式下拉菜单------------*/
+/* 容器 <div> - 需要定位下拉内容 */
+.dropdown{
+    position:relative;
+    display: inline-block; /*设置为行块，并排显示*/
+}
+/* 下拉菜单内容，设置为隐藏 */
+.dropdown-content{
+    display: none;
+    position: absolute; /*父级元素设置了relative，是以父级元素来absolute的*/
+    background-color: #f5f5f5;
+    box-shadow:0px 8px 15px 0px rgba(0,0,0,0.2);/*添加阴影:指定下拉菜单在水平方向阴影为0，垂直方向为8像素的阴影，模糊距离为15像素，阴影的尺寸为0，并指定阴影的颜色为黑色，且透明度为0.2。*/
+}
+/* 下拉按钮样式 */
+.dropbtn{
+    color: white;
+    font-size: 16px;
+    padding: 15px;
+    border: none; /*按钮的边框线去掉*/
+    background-color: #00cd66;
+    cursor: pointer; /*鼠标变成指针*/
+}
+/* 下拉菜单链接的样式 */
+.dropdown-content a{
+    color: black;
+    text-decoration: none;
+    display: block;
+    padding: 12px 20px;
+}
+ /* 鼠标移入后显示下拉菜单 */
+ .dropdown:hover .dropdown-content{
+     display: block;
+ }
+/* 鼠标移入后修改链接的背景色 */
+.dropdown-content a:hover{
+    background-color:#E8E8E8;
+}
+/* 下拉菜单显示后修改下拉按钮的背景色 */
+.dropdown:hover .dropbtn{
+    background-color:#008B00;
 }
